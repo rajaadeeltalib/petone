@@ -16,7 +16,14 @@ import Pet11Img from "/public/img/pets/11.png";
 import Pet12Img from "/public/img/pets/12.png";
 import Badge from "/public/img/pets/badge.svg";
 
-const pets = [
+interface Pet {
+  id: number;
+  category: string;
+  name: string;
+  image: any;
+}
+
+const pets: Pet[] = [
   {
     id: 1,
     category: "cat",
@@ -94,8 +101,8 @@ const pets = [
 const Pets = () => {
   const [petDetails, setPetDetails] = useState(pets[10]);
   const [petIndex, setPetIndex] = useState(10);
-  const getPetDetails = (id) => {
-    const pet = pets.find((pet) => {
+  const getPetDetails = (id:any) => {
+    const pet:any = pets.find((pet) => {
       return pet.id === id;
     });
 
